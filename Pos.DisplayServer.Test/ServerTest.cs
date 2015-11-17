@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FractionLibrary.Test
 {
-    public class Class1
+    public class DisplayServerAcceptanceTest
     {
+        public void GivenClientAvailable_WhenSendingMessage_ThenDisplayed()
+        {
+            
+        }
     }
 }

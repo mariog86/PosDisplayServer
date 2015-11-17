@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer", "Pos.Di
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Test", "Pos.DisplayServer.Test\Pos.DisplayServer.Test.csproj", "{BB7DCF8B-C362-49F7-9D77-4DBA9B1B3B0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Gui.AcceptanceTest", "Pos.DisplayServer.Gui.AcceptanceTest\Pos.DisplayServer.Gui.AcceptanceTest.csproj", "{9C38C3DD-4463-4E8F-AA29-960ECB48DB44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Gui", "Pos.DisplayServer.Gui\Pos.DisplayServer.Gui.csproj", "{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{BB7DCF8B-C362-49F7-9D77-4DBA9B1B3B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB7DCF8B-C362-49F7-9D77-4DBA9B1B3B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB7DCF8B-C362-49F7-9D77-4DBA9B1B3B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C38C3DD-4463-4E8F-AA29-960ECB48DB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C38C3DD-4463-4E8F-AA29-960ECB48DB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C38C3DD-4463-4E8F-AA29-960ECB48DB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C38C3DD-4463-4E8F-AA29-960ECB48DB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
