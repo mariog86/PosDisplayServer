@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Windows.Input;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Reflection;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UITesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.VisualStudio.TestTools.UITest.Extension;
-using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 
 
 namespace Pos.DisplayServer.Gui.AcceptanceTest
@@ -20,71 +18,55 @@ namespace Pos.DisplayServer.Gui.AcceptanceTest
     [CodedUITest]
     public class SpecificationAcceptanceTest
     {
-        public SpecificationAcceptanceTest()
-        {
-        }
-
         [TestMethod]
         public void GivenClientAvailable_WhenSendingMessage_ThenDisplayed()
         {
+            //Post("CHF 10.-");
             var entries = UIMap.UIMainWindowWindow.UIListBoxList.Items.Select(uit => uit.NativeElement).OfType<Label>().Select(l => l.Text);
 
             Assert.IsTrue(entries.Any(e => e == "CHF 10.-"));
         }
 
-        #region Additional test attributes
+        public void Post(string data, string uri = "http://localhost:6740")
+        {
+            var pairs = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("login", "abc")
+            };
 
-        // You can use the following additional attributes as you write your tests:
+            var content = new FormUrlEncodedContent(pairs);
 
-        //Use TestInitialize to run code before running each test 
-        [TestInitialize()]
-        [DeploymentItem("source", "targetFolder")]
+            var client = new HttpClient { BaseAddress = new Uri(uri) };
+
+            // call sync
+            var response = client.PostAsync("/api/membership/exist", content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+            }
+        }
+
+        [TestInitialize]
         public void MyTestInitialize()
         {
             applicationUnderTest = ApplicationUnderTest.Launch(ApplicationPath);
         }
 
-        //Use TestCleanup to run code after each test has run
-        [TestCleanup()]
+        [TestCleanup]
         public void MyTestCleanup()
         {
             applicationUnderTest.Close();
         }
 
-        #endregion
-
         /// <summary>
         ///Gets or sets the test context which provides
         ///information about and functionality for the current test run.
         ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
+        public TestContext TestContext { get; set; }
 
-        private TestContext testContextInstance;
-        private static readonly string ApplicationPath = Assembly.GetAssembly(typeof (Gui.App)).Location;
+        private static readonly string ApplicationPath = Assembly.GetAssembly(typeof (App)).Location;
         private ApplicationUnderTest applicationUnderTest;
 
-        public UIMap UIMap
-        {
-            get
-            {
-                if ((this.map == null))
-                {
-                    this.map = new UIMap();
-                }
-
-                return this.map;
-            }
-        }
+        public UIMap UIMap => map ?? (map = new UIMap());
 
         private UIMap map;
     }
