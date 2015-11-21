@@ -6,7 +6,10 @@ using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Windows.Automation;
+using System.Windows.Controls;
 using Microsoft.VisualStudio.TestTools.UITesting;
+using Microsoft.VisualStudio.TestTools.UITesting.WpfControls;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
@@ -21,10 +24,10 @@ namespace Pos.DisplayServer.Gui.AcceptanceTest
         [TestMethod]
         public void GivenClientAvailable_WhenSendingMessage_ThenDisplayed()
         {
-            //Post("CHF 10.-");
-            var entries = UIMap.UIMainWindowWindow.UIListBoxList.Items.Select(uit => uit.NativeElement).OfType<Label>().Select(l => l.Text);
+            Post("CHF 10.-");
+            var entry = (AutomationElement)UIMap.UIMainWindowWindow.UIListBoxList.Items[0].NativeElement;
 
-            Assert.IsTrue(entries.Any(e => e == "CHF 10.-"));
+            Assert.AreEqual("127.0.0.1: CHF 10.00", entry.Current.Name);
         }
 
         public void Post(string data, string uri = "http://localhost:6740")
