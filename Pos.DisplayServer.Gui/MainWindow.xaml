@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pos.DisplayServer.Gui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525"
+        DataContext="MainWindowViewModel" Loaded="Window_Loaded">
     <Grid>
         <ListBox x:Name="listBox" Margin="10">
             <ListBoxItem Content="127.0.0.1: CHF 10.00"/>
