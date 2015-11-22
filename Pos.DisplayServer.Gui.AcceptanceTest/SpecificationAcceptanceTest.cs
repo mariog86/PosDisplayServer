@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Reflection;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Automation;
 using System.Windows.Controls;
@@ -24,27 +28,29 @@ namespace Pos.DisplayServer.Gui.AcceptanceTest
         [TestMethod]
         public void GivenClientAvailable_WhenSendingMessage_ThenDisplayed()
         {
-            Post("CHF 10.-");
+            Post("CHF 10.00");
             var entry = (AutomationElement)UIMap.UIMainWindowWindow.UIListBoxList.Items[0].NativeElement;
 
             Assert.AreEqual("127.0.0.1: CHF 10.00", entry.Current.Name);
         }
-
-        public void Post(string data, string uri = "http://localhost:6740")
+        [TestMethod]
+        public void GivenClientAvailable_WhenSendingOtherMessage_ThenDisplayed()
         {
-            var pairs = new List<KeyValuePair<string, string>>
+            Post("CHF 15.00");
+            var entry = (AutomationElement)UIMap.UIMainWindowWindow.UIListBoxList.Items[0].NativeElement;
+
+            Assert.AreEqual("127.0.0.1: CHF 15.00", entry.Current.Name);
+        }
+
+        public void Post(string data, string hostname = "localhost", int port = 6740)
+        {
+            TcpClient client = new TcpClient();
+
+            client.Connect(hostname, port);
+            
+            using (var writer = new StreamWriter(client.GetStream(), Encoding.UTF8))
             {
-                new KeyValuePair<string, string>("login", "abc")
-            };
-
-            var content = new FormUrlEncodedContent(pairs);
-
-            var client = new HttpClient { BaseAddress = new Uri(uri) };
-
-            // call sync
-            var response = client.PostAsync("/api/membership/exist", content).Result;
-            if (response.IsSuccessStatusCode)
-            {
+                writer.WriteLine(data);
             }
         }
 
