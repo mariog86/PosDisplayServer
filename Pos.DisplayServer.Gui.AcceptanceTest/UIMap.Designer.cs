@@ -42,7 +42,71 @@ namespace Pos.DisplayServer.Gui.AcceptanceTest
             Mouse.Click(uIListBoxList, new Point(293, 113));
         }
         
+        /// <summary>
+        /// AssertMethod1
+        /// </summary>
+        public void AssertMethod1()
+        {
+            #region Variable Declarations
+            WpfList uIListBoxList = this.UIMainWindowWindow.UIListBoxList;
+            #endregion
+
+            // Verify that the 'ItemStatus' property of 'listBox' list box equals 'null'
+            Assert.IsNull(uIListBoxList.ItemStatus);
+        }
+        
+        /// <summary>
+        /// ClickStartButton
+        /// </summary>
+        public void ClickStartButton()
+        {
+            #region Variable Declarations
+            WpfButton uIStartButton = this.UIMainWindowWindow.UIStartButton;
+            #endregion
+
+            // Click 'Start' button
+            Mouse.Click(uIStartButton, new Point(43, 9));
+        }
+        
+        /// <summary>
+        /// ClickStopButton
+        /// </summary>
+        public void ClickStopButton()
+        {
+            #region Variable Declarations
+            WpfButton uIStopButton = this.UIMainWindowWindow.UIStopButton;
+            #endregion
+
+            // Click 'Stop' button
+            Mouse.Click(uIStopButton, new Point(54, 9));
+        }
+        
+        /// <summary>
+        /// EnterPortValue - Use 'EnterPortValueParams' to pass parameters into this method.
+        /// </summary>
+        public void EnterPortValue()
+        {
+            #region Variable Declarations
+            WpfEdit uIPortTextBoxEdit = this.UIMainWindowWindow.UIPortTextBoxEdit;
+            #endregion
+
+            // Type '6745' in 'PortTextBox' text box
+            uIPortTextBoxEdit.Text = this.EnterPortValueParams.UIPortTextBoxEditText;
+        }
+        
         #region Properties
+        public virtual EnterPortValueParams EnterPortValueParams
+        {
+            get
+            {
+                if ((this.mEnterPortValueParams == null))
+                {
+                    this.mEnterPortValueParams = new EnterPortValueParams();
+                }
+                return this.mEnterPortValueParams;
+            }
+        }
+        
         public UIMainWindowWindow UIMainWindowWindow
         {
             get
@@ -57,7 +121,24 @@ namespace Pos.DisplayServer.Gui.AcceptanceTest
         #endregion
         
         #region Fields
+        private EnterPortValueParams mEnterPortValueParams;
+        
         private UIMainWindowWindow mUIMainWindowWindow;
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'EnterPortValue'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class EnterPortValueParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type '6745' in 'PortTextBox' text box
+        /// </summary>
+        public string UIPortTextBoxEditText = "6745";
         #endregion
     }
     
@@ -90,10 +171,82 @@ namespace Pos.DisplayServer.Gui.AcceptanceTest
                 return this.mUIListBoxList;
             }
         }
+        
+        public WpfList UIItemsListBoxList
+        {
+            get
+            {
+                if ((this.mUIItemsListBoxList == null))
+                {
+                    this.mUIItemsListBoxList = new WpfList(this);
+                    #region Search Criteria
+                    this.mUIItemsListBoxList.SearchProperties[WpfList.PropertyNames.AutomationId] = "ItemsListBox";
+                    this.mUIItemsListBoxList.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIItemsListBoxList;
+            }
+        }
+        
+        public WpfButton UIStartButton
+        {
+            get
+            {
+                if ((this.mUIStartButton == null))
+                {
+                    this.mUIStartButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIStartButton.SearchProperties[WpfButton.PropertyNames.AutomationId] = "StartButton";
+                    this.mUIStartButton.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIStartButton;
+            }
+        }
+        
+        public WpfButton UIStopButton
+        {
+            get
+            {
+                if ((this.mUIStopButton == null))
+                {
+                    this.mUIStopButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIStopButton.SearchProperties[WpfButton.PropertyNames.AutomationId] = "StopButton";
+                    this.mUIStopButton.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIStopButton;
+            }
+        }
+        
+        public WpfEdit UIPortTextBoxEdit
+        {
+            get
+            {
+                if ((this.mUIPortTextBoxEdit == null))
+                {
+                    this.mUIPortTextBoxEdit = new WpfEdit(this);
+                    #region Search Criteria
+                    this.mUIPortTextBoxEdit.SearchProperties[WpfEdit.PropertyNames.AutomationId] = "PortTextBox";
+                    this.mUIPortTextBoxEdit.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIPortTextBoxEdit;
+            }
+        }
         #endregion
         
         #region Fields
         private WpfList mUIListBoxList;
+        
+        private WpfList mUIItemsListBoxList;
+        
+        private WpfButton mUIStartButton;
+        
+        private WpfButton mUIStopButton;
+        
+        private WpfEdit mUIPortTextBoxEdit;
         #endregion
     }
 }

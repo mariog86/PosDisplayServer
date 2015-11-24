@@ -78,6 +78,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="packages.config" />
     <None Include="UIMap.uitest" />
   </ItemGroup>
@@ -85,6 +88,10 @@
     <ProjectReference Include="..\Pos.DisplayServer.Gui\Pos.DisplayServer.Gui.csproj">
       <Project>{ee700d8e-c18f-48a5-a259-bf749f2d0a4e}</Project>
       <Name>Pos.DisplayServer.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pos.Test.Helper\Pos.Test.Helper.csproj">
+      <Project>{C5DA2831-E45F-4D46-B4D1-1B4C4EA13BE7}</Project>
+      <Name>Pos.Test.Helper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <ListBox x:Name="listBox" Margin="10" ItemsSource="{Binding Items}">
+        <ListBox x:Name="ItemsListBox" Margin="10,51,10,10" ItemsSource="{Binding Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -19,5 +19,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <TextBox x:Name="PortTextBox" HorizontalAlignment="Left" Height="23" Margin="53,13,0,0" TextWrapping="Wrap" Text="{Binding Path=Port, Mode=TwoWay }" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="190,14,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StartCommand}"/>
+        <Button x:Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="282,14,0,0" VerticalAlignment="Top" Width="75" Command="{Binding StopCommand}"/>
+        <Label x:Name="Portlabel" Content="Port:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

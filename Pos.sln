@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Gui.Accep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Gui", "Pos.DisplayServer.Gui\Pos.DisplayServer.Gui.csproj", "{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.Test.Helper", "Pos.Test.Helper\Pos.Test.Helper.csproj", "{C5DA2831-E45F-4D46-B4D1-1B4C4EA13BE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE700D8E-C18F-48A5-A259-BF749F2D0A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DA2831-E45F-4D46-B4D1-1B4C4EA13BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DA2831-E45F-4D46-B4D1-1B4C4EA13BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DA2831-E45F-4D46-B4D1-1B4C4EA13BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DA2831-E45F-4D46-B4D1-1B4C4EA13BE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
