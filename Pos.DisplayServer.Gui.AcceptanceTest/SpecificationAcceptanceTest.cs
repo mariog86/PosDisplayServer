@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.IO;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Automation;
-using System.Windows.Controls;
 using Microsoft.VisualStudio.TestTools.UITesting;
-using Microsoft.VisualStudio.TestTools.UITesting.WpfControls;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
@@ -33,6 +23,7 @@ namespace Pos.DisplayServer.Gui.AcceptanceTest
 
             Assert.AreEqual("127.0.0.1: CHF 10.00", entry.Current.Name);
         }
+
         [TestMethod]
         public void GivenClientAvailable_WhenSendingOtherMessage_ThenDisplayed()
         {

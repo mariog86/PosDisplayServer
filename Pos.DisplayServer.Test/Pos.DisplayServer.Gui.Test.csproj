@@ -7,8 +7,8 @@
     <ProjectGuid>{BB7DCF8B-C362-49F7-9D77-4DBA9B1B3B0F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pos.DisplayServer.Test</RootNamespace>
-    <AssemblyName>Pos.DisplayServer.Test</AssemblyName>
+    <RootNamespace>Pos.DisplayServer.Gui.Test</RootNamespace>
+    <AssemblyName>Pos.DisplayServer.Gui.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServerTest.cs" />
+    <Compile Include="DisplayServerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

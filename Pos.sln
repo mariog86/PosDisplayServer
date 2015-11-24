@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer", "Pos.DisplayServer\Pos.DisplayServer.csproj", "{95E839EE-868F-4719-BD77-79C20800817D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Test", "Pos.DisplayServer.Test\Pos.DisplayServer.Test.csproj", "{BB7DCF8B-C362-49F7-9D77-4DBA9B1B3B0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Gui.Test", "Pos.DisplayServer.Test\Pos.DisplayServer.Gui.Test.csproj", "{BB7DCF8B-C362-49F7-9D77-4DBA9B1B3B0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pos.DisplayServer.Gui.AcceptanceTest", "Pos.DisplayServer.Gui.AcceptanceTest\Pos.DisplayServer.Gui.AcceptanceTest.csproj", "{9C38C3DD-4463-4E8F-AA29-960ECB48DB44}"
 EndProject
